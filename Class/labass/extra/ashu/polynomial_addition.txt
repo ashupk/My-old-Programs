@@ -1,0 +1,100 @@
+/* Polynomial Addition */
+/* Terminates with -1 -1 */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct polynode
+{
+	int coeff;
+	int expo;
+	struct polynode *next;
+}polyn;
+
+polyn * insert_node(polyn *head, int coeff, int expo)
+{
+	polyn * new = (polyn*) malloc( sizeof(polyn) );
+	new->coeff = coeff;
+	new->expo = expo;
+	new->next=head;
+	return new;
+}
+
+polyn * addpoly( polyn *hpoly1, polyn *hpoly2, polyn *hpolyres)
+{
+	if(hpoly1 == NULL || hpoly2 == NULL)
+	{
+		if(hpoly2 !=NULL)
+		{
+			while(hpoly2!=NULL)
+			{
+				hpolyres = insert_node(hpolyres, hpoly2->coeff, hpoly2->expo);
+				hpoly2 = hpoly2->next;
+			}
+		}
+		if(hpoly1 !=NULL)
+		{
+			while(hpoly1!=NULL)
+			{
+				hpolyres = insert_node(hpolyres, hpoly1->coeff, hpoly1->expo);
+				hpoly1 = hpoly1->next;
+			}
+		}
+		return hpolyres;
+	}
+
+	if(hpoly1 !=NULL && hpoly2!=NULL)
+	{
+
+		if(hpoly1->expo > hpoly2->expo)
+		{
+			hpolyres = insert_node(hpolyres, hpoly2->coeff, hpoly2->expo);
+			hpoly2 = hpoly2->next;
+		}
+		else if(hpoly2->expo > hpoly1->expo)
+		{
+			hpolyres = insert_node(hpolyres, hpoly1->coeff, hpoly1->expo);
+			hpoly1 = hpoly1->next;
+		}
+		else
+		{
+			hpolyres = insert_node(hpolyres, (hpoly1->coeff+hpoly2->coeff), hpoly1->expo);
+			hpoly1 = hpoly1->next;
+			hpoly2 = hpoly2->next;
+		}
+	}
+	hpolyres = addpoly(hpoly1, hpoly2, hpolyres);
+	return hpolyres;
+}
+
+
+void display(polyn *head)
+{
+	while(head!=NULL)
+	{
+		printf("%d %d ",head->coeff, head->expo);
+		head = head->next;
+	}
+	printf("\n");
+}
+
+int main()
+{
+	polyn *hpoly1=NULL, *hpoly2=NULL, *hpolyres=NULL;
+	int coeff, expo;
+	scanf("%d %d",&coeff, &expo);
+	while(expo != -1)
+	{
+		hpoly1 = insert_node( hpoly1, coeff, expo );
+		scanf("%d %d",&coeff, &expo);
+	}
+	scanf("%d %d",&coeff, &expo);
+	while(expo != -1)
+	{
+		hpoly2 = insert_node( hpoly2, coeff, expo );
+		scanf("%d %d",&coeff, &expo);
+	}
+	hpolyres = addpoly(hpoly1, hpoly2, hpolyres);
+	display(hpolyres);
+	return 0;
+}

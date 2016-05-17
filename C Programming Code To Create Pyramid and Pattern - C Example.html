@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)http://www.programiz.com/c-programming/examples/pyramid-pattern -->
+<html lang="en" class="js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+<link rel="shortcut icon" href="http://www.programiz.com/sites/tutorial2program/files/favicon_0.ico" type="image/vnd.microsoft.icon">
+<meta name="description" content=" ">
+<meta name="generator" content="Drupal 7 (http://drupal.org)">
+<link rel="canonical" href="./C Programming Code To Create Pyramid and Pattern - C Example_files/C Programming Code To Create Pyramid and Pattern - C Example.html">
+<link rel="shortlink" href="http://www.programiz.com/node/332">
+  <title>C Programming Code To Create Pyramid and Pattern - C Example</title>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link href="./C Programming Code To Create Pyramid and Pattern - C Example_files/css" rel="stylesheet" type="text/css">
+  <link type="text/css" rel="stylesheet" href="./C Programming Code To Create Pyramid and Pattern - C Example_files/css__FygXEh-ZMl1Vihk4zdfgRvWcriCKj-S-OzoKO_ks228__7vALktEVvVVkp3qmUEUZqhRJU1DiHVketzzOt4Xe7go__RIXYFtDBytms-w0gk8NDY3SFSmp_gXRm7WNqSCDhksg.css" media="all">
+<link type="text/css" rel="stylesheet" href="./C Programming Code To Create Pyramid and Pattern - C Example_files/css__rQ1alF2wtRJheC4MwbTGQHhDW1u3JWtM73MeXej8ZCI__3kvjnhPlSmY57EDBJoMy3KR5TXQNEBzxP2MxnGPwPPE__RIXYFtDBytms-w0gk8NDY3SFSmp_gXRm7WNqSCDhksg.css" media="screen">
+<link type="text/css" rel="stylesheet" href="./C Programming Code To Create Pyramid and Pattern - C Example_files/css__6g__ONRgpJDcNR6a79oMUUalKGWriAXhtqQAxCpaBMs__zln-HWbpTvswAg3afyhLtq7CdbvxVvRHqrTJYdzUHwc__RIXYFtDBytms-w0gk8NDY3SFSmp_gXRm7WNqSCDhksg.css" media="all">
+<link type="text/css" rel="stylesheet" href="./C Programming Code To Create Pyramid and Pattern - C Example_files/css__qeka5hDNGqFE0TbgGZI3WftTLDxXF0H10p7Mt-fotxM__iZIbHO3bP-UYYm5onvnMDXKh5Cm37F-EFeIOScAS9s0__RIXYFtDBytms-w0gk8NDY3SFSmp_gXRm7WNqSCDhksg.css" media="screen">
+  <script async="" type="text/javascript" src="./C Programming Code To Create Pyramid and Pattern - C Example_files/ca-pub-9007421361448641.js"></script><script async="" src="./C Programming Code To Create Pyramid and Pattern - C Example_files/analytics.js"></script><script type="text/javascript" src="./C Programming Code To Create Pyramid and Pattern - C Example_files/js__1j-vOQz2u-6IZr2tsn2u1_aUcYO8guUPfPdEygTX7mo__gc8gXZsmvbm10HO8S4RCO5iA8DupyrvJcDGIX5aw0LU__RIXYFtDBytms-w0gk8NDY3SFSmp_gXRm7WNqSCDhksg.js"></script>
+<script type="text/javascript" src="./C Programming Code To Create Pyramid and Pattern - C Example_files/js__s8koV42BrNEz7tE4ZYZ1qXy99PxMGukocK7vBMeKKOQ__qgtjwMoj5I1ajI7U0bSGcjUT9-xuqiKUz82JP1Wwm9M__RIXYFtDBytms-w0gk8NDY3SFSmp_gXRm7WNqSCDhksg.js"></script>
+<script type="text/javascript" src="./C Programming Code To Create Pyramid and Pattern - C Example_files/js__x1SPG53SHRbnB1HFHIYWga-Yj00JusQbI9xjYzR-3zg__h6ZybJGs8tiwEl5YlLug_SYEUKjVjUHj2-otw6PCvhY__RIXYFtDBytms-w0gk8NDY3SFSmp_gXRm7WNqSCDhksg.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i.GoogleAnalyticsObject=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create","UA-36675496-1",{cookieDomain:"auto"});ga("set","anonymizeIp",true);ga("send","pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="./C Programming Code To Create Pyramid and Pattern - C Example_files/js__CV2_UISGyvuKAPeC_vj6P8tVlqF9h_makc2CpYyl_i0__oQFaMpJnH7dyFi4Qc26Z-EshT04rBpud2UsXgdNfJYQ__RIXYFtDBytms-w0gk8NDY3SFSmp_gXRm7WNqSCDhksg.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings,{basePath:"\/",pathPrefix:"",ajaxPageState:{theme:"programiz",theme_token:"O9_BgWu-epIWQR_A4YuvkHqnkYfxKQo2N9pqIhRcwaw",css:{"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.tabs.css":1,"sites\/all\/modules\/codefilter\/codefilter.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/themes\/programiz\/programiz.css":1,"sites\/all\/modules\/prettify\/styles\/stackoverflow.css":1},js:{"sites\/all\/libraries\/prettify\/prettify.js":1,"sites\/all\/modules\/prettify\/prettify.loader.js":1,"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery.once.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.tabs.min.js":1,"sites\/all\/modules\/jquery_ui_filter\/jquery_ui_filter.js":1,"sites\/all\/modules\/codefilter\/codefilter.js":1,"sites\/all\/modules\/jquery_ui_filter\/tabs\/jquery_ui_filter_tabs.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"sites\/all\/themes\/programiz\/programiz.js":1}},jQueryUiFilter:{disabled:0,tabsOptions:{collapsible:"false",event:"click",fx:0,paging:0,selected:"",scrollTo:0,history:"false"},tabsHeaderTag:"h3"},prettify:{linenums:false,match:"",nocode:"nocode",custom:[],markup:{precode:true,code:false,pre:false}},googleanalytics:{trackOutbound:1,trackMailto:1,trackDownload:1,trackDownloadExtensions:"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"}});
+//--><!]]>
+</script>
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-332 node-type-c-example" style=""><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="_mN_beacons" style="display: none !important;"></iframe>
+  <div id="skip-link">
+    <a href="http://www.programiz.com/c-programming/examples/pyramid-pattern#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <!-- Header starts -->
+<header id="pageHeader" class="cf" role="banner">
+<div class="headerWrapper">
+<div class="headerContent cf"> <a href="http://www.programiz.com/" title="Home">Programiz</a>
+</div>
+
+</div></header>
+<!-- Header end -->
+
+<!-- Main Navigation starts-->
+<nav id="mainNav" role="navigation">
+<h2>Main Menu</h2><ul class="expand"><li class="menu-218 first"><a href="http://www.programiz.com/">Home</a></li>
+<li class="menu-438"><a href="http://www.programiz.com/c-programming" title="C Programming Tutorial">C Programming</a></li>
+<li class="menu-439"><a href="http://www.programiz.com/cpp-programming" title="C++ Programming Tutorial">C++</a></li>
+<li class="menu-440"><a href="http://www.programiz.com/python-programming" title="Python Tutorial">Python</a></li>
+<li class="menu-561 last"><a href="http://www.programiz.com/r-programming">R Programming</a></li>
+</ul></nav>
+<!-- Main Navigation ends-->
+
+<!-- Fixed navigation slide starts
+<div class="fixedNav cf">
+  <div class="fixWrapper">
+    <div class="fixLogo">Programiz Logo</div>
+    <ul class="fixSocial">
+      <li><a href="https://www.facebook.com/sharer/sharer.php?u=http:///c-programming/examples/pyramid-pattern">Share on Facebook</a></li>
+      <li><a href="https://twitter.com/share?url=http:///c-programming/examples/pyramid-pattern">Share on Twitter</a></li>
+    </ul>
+  </div>
+</div> -->
+
+<article id="main" role="main">
+  
+<div id="content">
+	
+<!-- Content Top Starts -->	
+	<!-- Content Top Ends -->	
+
+    
+<!-- Main Content Starts-->
+    <section class="mainContent">
+	            <h1>C Programming Code To Create Pyramid and Pattern</h1>                
+        	<div class="contentInside">
+	    	  <div class="region region-content-inside">
+      
+    <script async="" src="./C Programming Code To Create Pyramid and Pattern - C Example_files/adsbygoogle.js"></script>
+<!-- programiz 728 * 90 (new top) -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-9007421361448641" data-ad-slot="8228194420" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>  
+    <p><strong>To understand this example, you should have knowledge of following <a href="http://www.programiz.com/c-programming" title="C Programming Tutorial">C programming</a> topics:</strong></p>  </div>
+ 	</div>
+				
+	 	<div class="tabs"></div>	    		       	  <div class="region region-content">
+      
+    <div id="node-332" class="node node-c-example clearfix" about="/c-programming/examples/pyramid-pattern" typeof="sioc:Item foaf:Document">
+       <span property="dc:title" content="C Programming Code To Create Pyramid and Pattern" class="rdf-meta element-hidden"></span>
+  <div class="content">
+    <div class="field field-name-field-c-topics field-type-entityreference field-label-hidden"><div class="field-items"><div class="field-item even"><a href="http://www.programiz.com/c-programming/c-if-else-statement">C Programming if, if..else and Nested if...else Statement</a></div><div class="field-item odd"><a href="http://www.programiz.com/c-programming/c-for-loop">C Programming for Loop</a></div><div class="field-item even"><a href="http://www.programiz.com/c-programming/c-do-while-loops">C programming while and do...while Loop</a></div><div class="field-item odd"><a href="http://www.programiz.com/c-programming/c-break-continue-statement">C Programming break and continue Statement</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>&nbsp;</p>
+<table border="1" cellpadding="1" cellspacing="1" style="width:500px" summary="List of program to display triangle, pyramid and patterns in C programming"><thead><tr><th scope="col">List of Source Code</th></tr></thead><tbody><tr><td><a href="http://www.programiz.com/c-programming/examples/pyramid-pattern#triangle">Code to draw triangle using *, digits and characters</a></td></tr><tr><td><a href="http://www.programiz.com/c-programming/examples/pyramid-pattern#inverted_triangle">Code to display inverted triangle using * and digit</a></td></tr><tr><td><a href="http://www.programiz.com/c-programming/examples/pyramid-pattern#pyramid">Code to construct pyramid</a></td></tr><tr><td><a href="http://www.programiz.com/c-programming/examples/pyramid-pattern#reverse_pyramid">Code to construct reverse pyramid</a></td></tr><tr><td><a href="http://www.programiz.com/c-programming/examples/pyramid-pattern#pascal_triangle">Code to construct Pascal's traingle</a></td></tr><tr><td><a href="http://www.programiz.com/c-programming/examples/pyramid-pattern#floyd_triangle">Code to construct Floyd's triangle</a></td></tr></tbody></table>
+<p>&nbsp;</p>
+<h3><a name="triangle"></a>C Program To display the triangle using *, numbers and character</h3>
+<p><strong>Write a C Program to print half pyramid as using * as shown in figure below.</strong></p>
+
+<pre><samp>*
+* *
+* * *
+* * * *
+* * * * *</samp></pre>
+
+<pre class="prettyprint prettyprinted"><code><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">,</span><span class="pln">j</span><span class="pun">,</span><span class="pln">rows</span><span class="pun">;</span><span class="pln">
+    printf</span><span class="pun">(</span><span class="str">"Enter the number of rows: "</span><span class="pun">);</span><span class="pln">
+    scanf</span><span class="pun">(</span><span class="str">"%d"</span><span class="pun">,&amp;</span><span class="pln">rows</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">i</span><span class="pun">&lt;=</span><span class="pln">rows</span><span class="pun">;++</span><span class="pln">i</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">j</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">j</span><span class="pun">&lt;=</span><span class="pln">i</span><span class="pun">;++</span><span class="pln">j</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+           printf</span><span class="pun">(</span><span class="str">"* "</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        printf</span><span class="pun">(</span><span class="str">"\n"</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p><strong>Write a C Program to print half pyramid as using numbers as shown in figure below.</strong></p>
+
+<pre><samp>1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5</samp></pre>
+
+<pre class="prettyprint prettyprinted"><code><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">,</span><span class="pln">j</span><span class="pun">,</span><span class="pln">rows</span><span class="pun">;</span><span class="pln">
+    printf</span><span class="pun">(</span><span class="str">"Enter the number of rows: "</span><span class="pun">);</span><span class="pln">
+    scanf</span><span class="pun">(</span><span class="str">"%d"</span><span class="pun">,&amp;</span><span class="pln">rows</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">i</span><span class="pun">&lt;=</span><span class="pln">rows</span><span class="pun">;++</span><span class="pln">i</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">j</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">j</span><span class="pun">&lt;=</span><span class="pln">i</span><span class="pun">;++</span><span class="pln">j</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+           printf</span><span class="pun">(</span><span class="str">"%d "</span><span class="pun">,</span><span class="pln">j</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        printf</span><span class="pun">(</span><span class="str">"\n"</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p><strong>Write a C Program to print triangle of characters as below</strong></p>
+
+<pre><samp>A
+B B
+C C C
+D D D D
+E E E E E</samp></pre>
+
+<pre class="prettyprint prettyprinted"><code><span class="pln">
+</span><span class="com">#include</span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">,</span><span class="pln">j</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">char</span><span class="pln"> input</span><span class="pun">,</span><span class="pln">temp</span><span class="pun">=</span><span class="str">'A'</span><span class="pun">;</span><span class="pln">
+    printf</span><span class="pun">(</span><span class="str">"Enter uppercase character you want in triangle at last row: "</span><span class="pun">);</span><span class="pln">
+    scanf</span><span class="pun">(</span><span class="str">"%c"</span><span class="pun">,&amp;</span><span class="pln">input</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">i</span><span class="pun">&lt;=(</span><span class="pln">input</span><span class="pun">-</span><span class="str">'A'</span><span class="pun">+</span><span class="lit">1</span><span class="pun">);++</span><span class="pln">i</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">j</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">j</span><span class="pun">&lt;=</span><span class="pln">i</span><span class="pun">;++</span><span class="pln">j</span><span class="pun">)</span><span class="pln">
+           printf</span><span class="pun">(</span><span class="str">"%c"</span><span class="pun">,</span><span class="pln">temp</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">++</span><span class="pln">temp</span><span class="pun">;</span><span class="pln">
+        printf</span><span class="pun">(</span><span class="str">"\n"</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p><a name="inverted_triangle"></a></p>
+<h3>C Program To Display inverted half pyramid using * and numbers</h3>
+<p><strong>Write a C Program to print inverted half pyramid using * as shown below.</strong></p>
+
+<pre><samp>* * * * *
+* * * *
+* * * 
+* *
+*</samp></pre>
+
+<pre class="prettyprint prettyprinted"><code><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">,</span><span class="pln">j</span><span class="pun">,</span><span class="pln">rows</span><span class="pun">;</span><span class="pln">
+    printf</span><span class="pun">(</span><span class="str">"Enter the number of rows: "</span><span class="pun">);</span><span class="pln">
+    scanf</span><span class="pun">(</span><span class="str">"%d"</span><span class="pun">,&amp;</span><span class="pln">rows</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i</span><span class="pun">=</span><span class="pln">rows</span><span class="pun">;</span><span class="pln">i</span><span class="pun">&gt;=</span><span class="lit">1</span><span class="pun">;--</span><span class="pln">i</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">j</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">j</span><span class="pun">&lt;=</span><span class="pln">i</span><span class="pun">;++</span><span class="pln">j</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+           printf</span><span class="pun">(</span><span class="str">"* "</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    printf</span><span class="pun">(</span><span class="str">"\n"</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<pre><samp>1 2 3 4 5
+1 2 3 4 
+1 2 3
+1 2
+1</samp></pre>
+
+<p><strong>Write a C Program to print inverted half pyramid as using numbers as shown below.</strong></p>
+
+<pre class="prettyprint prettyprinted"><code><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">,</span><span class="pln">j</span><span class="pun">,</span><span class="pln">rows</span><span class="pun">;</span><span class="pln">
+    printf</span><span class="pun">(</span><span class="str">"Enter the number of rows: "</span><span class="pun">);</span><span class="pln">
+    scanf</span><span class="pun">(</span><span class="str">"%d"</span><span class="pun">,&amp;</span><span class="pln">rows</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i</span><span class="pun">=</span><span class="pln">rows</span><span class="pun">;</span><span class="pln">i</span><span class="pun">&gt;=</span><span class="lit">1</span><span class="pun">;--</span><span class="pln">i</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">j</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">j</span><span class="pun">&lt;=</span><span class="pln">i</span><span class="pun">;++</span><span class="pln">j</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+           printf</span><span class="pun">(</span><span class="str">"%d "</span><span class="pun">,</span><span class="pln">j</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    printf</span><span class="pun">(</span><span class="str">"\n"</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p><a name="pyramid"></a></p>
+<h2>C Program To display the pyramid of * and digits</h2>
+<p><strong>Write a C program to print pyramid using *.</strong></p>
+
+<pre><samp>        
+        *
+      * * *
+    * * * * *
+  * * * * * * *
+* * * * * * * * *</samp></pre>
+
+<pre class="prettyprint prettyprinted"><code><span class="pln">
+</span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">,</span><span class="pln">space</span><span class="pun">,</span><span class="pln">rows</span><span class="pun">,</span><span class="pln">k</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+    printf</span><span class="pun">(</span><span class="str">"Enter the number of rows: "</span><span class="pun">);</span><span class="pln">
+    scanf</span><span class="pun">(</span><span class="str">"%d"</span><span class="pun">,&amp;</span><span class="pln">rows</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">i</span><span class="pun">&lt;=</span><span class="pln">rows</span><span class="pun">;++</span><span class="pln">i</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">space</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">space</span><span class="pun">&lt;=</span><span class="pln">rows</span><span class="pun">-</span><span class="pln">i</span><span class="pun">;++</span><span class="pln">space</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+           printf</span><span class="pun">(</span><span class="str">"  "</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">while</span><span class="pun">(</span><span class="pln">k</span><span class="pun">!=</span><span class="lit">2</span><span class="pun">*</span><span class="pln">i</span><span class="pun">-</span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+           printf</span><span class="pun">(</span><span class="str">"* "</span><span class="pun">);</span><span class="pln">
+           </span><span class="pun">++</span><span class="pln">k</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        k</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        printf</span><span class="pun">(</span><span class="str">"\n"</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p><strong>Write a C program to print the pyramid of digits in pattern as below.</strong></p>
+
+<pre><samp>        1
+      2 3 2
+    3 4 5 4 3
+  4 5 6 7 6 5 4
+5 6 7 8 9 8 7 6 5</samp></pre>
+
+<pre class="prettyprint prettyprinted"><code><span class="pln">
+</span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+   </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">,</span><span class="pln">space</span><span class="pun">,</span><span class="pln">rows</span><span class="pun">,</span><span class="pln">k</span><span class="pun">=</span><span class="lit">0</span><span class="pun">,</span><span class="pln">count</span><span class="pun">=</span><span class="lit">0</span><span class="pun">,</span><span class="pln">count1</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+   printf</span><span class="pun">(</span><span class="str">"Enter the number of rows: "</span><span class="pun">);</span><span class="pln">
+   scanf</span><span class="pun">(</span><span class="str">"%d"</span><span class="pun">,&amp;</span><span class="pln">rows</span><span class="pun">);</span><span class="pln">
+   </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">i</span><span class="pun">&lt;=</span><span class="pln">rows</span><span class="pun">;++</span><span class="pln">i</span><span class="pun">)</span><span class="pln">   
+   </span><span class="pun">{</span><span class="pln">
+       </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">space</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">space</span><span class="pun">&lt;=</span><span class="pln">rows</span><span class="pun">-</span><span class="pln">i</span><span class="pun">;++</span><span class="pln">space</span><span class="pun">)</span><span class="pln">
+       </span><span class="pun">{</span><span class="pln">
+          printf</span><span class="pun">(</span><span class="str">"  "</span><span class="pun">);</span><span class="pln">
+          </span><span class="pun">++</span><span class="pln">count</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">while</span><span class="pun">(</span><span class="pln">k</span><span class="pun">!=</span><span class="lit">2</span><span class="pun">*</span><span class="pln">i</span><span class="pun">-</span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+           </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">count</span><span class="pun">&lt;=</span><span class="pln">rows</span><span class="pun">-</span><span class="lit">1</span><span class="pun">)</span><span class="pln"> 
+           </span><span class="pun">{</span><span class="pln">
+             printf</span><span class="pun">(</span><span class="str">"%d "</span><span class="pun">,(</span><span class="pln">i</span><span class="pun">+</span><span class="pln">k</span><span class="pun">));</span><span class="pln">
+             </span><span class="pun">++</span><span class="pln">count</span><span class="pun">;</span><span class="pln">
+           </span><span class="pun">}</span><span class="pln">
+           </span><span class="kwd">else</span><span class="pln">
+           </span><span class="pun">{</span><span class="pln">
+             </span><span class="pun">++</span><span class="pln">count1</span><span class="pun">;</span><span class="pln">
+              printf</span><span class="pun">(</span><span class="str">"%d "</span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="pln">i</span><span class="pun">+</span><span class="pln">k</span><span class="pun">-</span><span class="lit">2</span><span class="pun">*</span><span class="pln">count1</span><span class="pun">));</span><span class="pln"> 
+           </span><span class="pun">}</span><span class="pln">
+           </span><span class="pun">++</span><span class="pln">k</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        count1</span><span class="pun">=</span><span class="pln">count</span><span class="pun">=</span><span class="pln">k</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        printf</span><span class="pun">(</span><span class="str">"\n"</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<h2><a name="reverse_pyramid"></a>Write a C program to display reverse pyramid.</h2>
+
+<pre><samp>
+* * * * * * * * *
+  * * * * * * *
+    * * * * *
+      * * *
+        *
+</samp></pre>
+
+<pre class="prettyprint prettyprinted"><code><span class="pln">
+</span><span class="com">#include</span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> rows</span><span class="pun">,</span><span class="pln">i</span><span class="pun">,</span><span class="pln">j</span><span class="pun">,</span><span class="pln">space</span><span class="pun">;</span><span class="pln">
+    printf</span><span class="pun">(</span><span class="str">"Enter number of rows: "</span><span class="pun">);</span><span class="pln">
+    scanf</span><span class="pun">(</span><span class="str">"%d"</span><span class="pun">,&amp;</span><span class="pln">rows</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i</span><span class="pun">=</span><span class="pln">rows</span><span class="pun">;</span><span class="pln">i</span><span class="pun">&gt;=</span><span class="lit">1</span><span class="pun">;--</span><span class="pln">i</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">space</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">space</span><span class="pun">&lt;</span><span class="pln">rows</span><span class="pun">-</span><span class="pln">i</span><span class="pun">;++</span><span class="pln">space</span><span class="pun">)</span><span class="pln">
+           printf</span><span class="pun">(</span><span class="str">"  "</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">j</span><span class="pun">=</span><span class="pln">i</span><span class="pun">;</span><span class="pln">j</span><span class="pun">&lt;=</span><span class="lit">2</span><span class="pun">*</span><span class="pln">i</span><span class="pun">-</span><span class="lit">1</span><span class="pun">;++</span><span class="pln">j</span><span class="pun">)</span><span class="pln">
+          printf</span><span class="pun">(</span><span class="str">"* "</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">j</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">j</span><span class="pun">&lt;</span><span class="pln">i</span><span class="pun">-</span><span class="lit">1</span><span class="pun">;++</span><span class="pln">j</span><span class="pun">)</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"* "</span><span class="pun">);</span><span class="pln">
+        printf</span><span class="pun">(</span><span class="str">"\n"</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p><a name="pascal_triangle"></a></p>
+<h2>C Program to Draw Pascal's triangle</h2>
+
+<pre><samp>
+           1
+         1   1
+       1   2   1
+     1   3   3    1
+   1  4    6   4   1
+ 1  5   10   10  5   1 
+</samp></pre>
+
+<pre class="prettyprint prettyprinted"><code><span class="com">#include</span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> rows</span><span class="pun">,</span><span class="pln">coef</span><span class="pun">=</span><span class="lit">1</span><span class="pun">,</span><span class="pln">space</span><span class="pun">,</span><span class="pln">i</span><span class="pun">,</span><span class="pln">j</span><span class="pun">;</span><span class="pln">
+    printf</span><span class="pun">(</span><span class="str">"Enter number of rows: "</span><span class="pun">);</span><span class="pln">
+    scanf</span><span class="pun">(</span><span class="str">"%d"</span><span class="pun">,&amp;</span><span class="pln">rows</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">i</span><span class="pun">&lt;</span><span class="pln">rows</span><span class="pun">;</span><span class="pln">i</span><span class="pun">++)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">space</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">space</span><span class="pun">&lt;=</span><span class="pln">rows</span><span class="pun">-</span><span class="pln">i</span><span class="pun">;</span><span class="pln">space</span><span class="pun">++)</span><span class="pln">
+        printf</span><span class="pun">(</span><span class="str">"  "</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">j</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">j</span><span class="pun">&lt;=</span><span class="pln">i</span><span class="pun">;</span><span class="pln">j</span><span class="pun">++)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">j</span><span class="pun">==</span><span class="lit">0</span><span class="pun">||</span><span class="pln">i</span><span class="pun">==</span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+                coef</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+            </span><span class="kwd">else</span><span class="pln">
+               coef</span><span class="pun">=</span><span class="pln">coef</span><span class="pun">*(</span><span class="pln">i</span><span class="pun">-</span><span class="pln">j</span><span class="pun">+</span><span class="lit">1</span><span class="pun">)/</span><span class="pln">j</span><span class="pun">;</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"%4d"</span><span class="pun">,</span><span class="pln">coef</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        printf</span><span class="pun">(</span><span class="str">"\n"</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p><a name="floyd_triangle"></a>,</p>
+<h2>C Program to display Floyd's Triangle.</h2>
+
+<pre><samp>1
+2 3
+4 5 6
+7 8 9 10</samp></pre>
+
+<pre class="prettyprint prettyprinted"><code><span class="com">#include</span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> rows</span><span class="pun">,</span><span class="pln">i</span><span class="pun">,</span><span class="pln">j</span><span class="pun">,</span><span class="pln">k</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+    printf</span><span class="pun">(</span><span class="str">"Enter number of rows: "</span><span class="pun">);</span><span class="pln">
+    scanf</span><span class="pun">(</span><span class="str">"%d"</span><span class="pun">,&amp;</span><span class="pln">rows</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">i</span><span class="pun">&lt;=</span><span class="pln">rows</span><span class="pun">;</span><span class="pln">i</span><span class="pun">++)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">j</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln">j</span><span class="pun">&lt;=</span><span class="pln">i</span><span class="pun">;++</span><span class="pln">j</span><span class="pun">)</span><span class="pln">
+          printf</span><span class="pun">(</span><span class="str">"%d "</span><span class="pun">,</span><span class="pln">k</span><span class="pun">+</span><span class="pln">j</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">++</span><span class="pln">k</span><span class="pun">;</span><span class="pln">
+        printf</span><span class="pun">(</span><span class="str">"\n"</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>&nbsp;</p></div></div></div>	
+</div>
+
+
+</div>
+  </div>
+       	    </section>
+<!-- Main Content Ends-->
+
+<!-- Content Bottom Starts -->
+    <div class="mainBottom">
+	    	  <div class="region region-content-bottom">
+      
+    <div class="view view-similar-python-examples-block view-id-similar_python_examples_block view-display-id-block view-dom-id-0de1cbaabc434deaa36c8bf0ceca1623">
+        
+  
+  
+      <div class="view-content">
+      <table class="views-table cols-1">
+         <thead>
+      <tr>
+                  <th class="views-field views-field-title">
+            Similar C Programming Examples          </th>
+              </tr>
+    </thead>
+    <tbody>
+          <tr>
+                  <td class="views-field views-field-title">
+            <a href="http://www.programiz.com/article/c-programming-pattern">C Programming Code To Create Pyramid and Structure</a>          </td>
+              </tr>
+          <tr>
+                  <td class="views-field views-field-title">
+            <a href="http://www.programiz.com/c-programming/examples/vowel-consonant-frequency-string">C Program to Find the Number of Vowels, Consonants, Digits and White space in a String</a>          </td>
+              </tr>
+          <tr>
+                  <td class="views-field views-field-title">
+            <a href="http://www.programiz.com/c-programming/examples/matrix-multiplication-function">C Program to Multiply two Matrices by Passing Matrix to Function</a>          </td>
+              </tr>
+          <tr>
+                  <td class="views-field views-field-title">
+            <a href="http://www.programiz.com/c-programming/examples/matrix-multiplication">C Program to Multiply to Matrix Using Multi-dimensional Arrays</a>          </td>
+              </tr>
+          <tr>
+                  <td class="views-field views-field-title">
+            <a href="http://www.programiz.com/c-programming/examples/digits-count">C Program to Count Number of Digits of an Integer</a>          </td>
+              </tr>
+      </tbody>
+</table>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  
+    <div>
+<div style="float: left; margin-left: 10px;">
+<script id="mNCC" language="javascript">  medianet_width='300';  medianet_height= '250';  medianet_crid='683527876';  </script>  <script id="mNSC" src="./C Programming Code To Create Pyramid and Pattern - C Example_files/nmedianet.js" language="javascript"></script><script language="javascript" type="text/javascript" id="_mN_dy_683527876" src="./C Programming Code To Create Pyramid and Pattern - C Example_files/fcmdynet.js"></script><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="250" width="300" id="_mN_main_683527876_0_n"></iframe> 
+</div>
+<div style="float: right; margin-right: 10px;">
+<script id="mNCC" language="javascript">  medianet_width='300';  medianet_height= '250';  medianet_crid='258231851';  </script>  <script id="mNSC" src="./C Programming Code To Create Pyramid and Pattern - C Example_files/nmedianet.js" language="javascript"></script><script language="javascript" type="text/javascript" id="_mN_dy_258231851" src="./C Programming Code To Create Pyramid and Pattern - C Example_files/fcmdynet(1).js"></script><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="250" width="300" id="_mN_main_258231851_1_n"></iframe> 
+</div>
+</div>
+<div style="clear: both"></div>  </div>
+    </div>
+
+<!-- Content Bottom Ends -->
+  </div>
+
+<!-- Left sidebar Starts -->
+  <aside id="sidebar" role="complementary">
+      <div class="region region-sidebar-left">
+      
+    <br>
+<script async="" src="./C Programming Code To Create Pyramid and Pattern - C Example_files/adsbygoogle.js"></script>
+<!-- medium rectangle latest -->
+<ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-9007421361448641" data-ad-slot="3518793228" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>  
+    <script async="" src="./C Programming Code To Create Pyramid and Pattern - C Example_files/adsbygoogle.js"></script>
+<!-- 300 * 600 (sidebar bottom) -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-9007421361448641" data-ad-slot="6773310825" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>  </div>
+  </aside>
+<!-- Left sidebar Ends -->
+
+<!-- Footer Right and Footer Left Starts-->
+  <div class="bottom cf">
+	</div>
+<!-- Footer Right and Footer Left Ends-->
+</article>
+
+<footer id="footer">
+
+
+
+  <div class="footerContent"> <a href="http://www.programiz.com/" class="footerLogo">Programiz - Programming Tutorial</a>
+    <ul class="navFooter">
+      <li><a href="http://www.programiz.com/about-us">About Us</a></li>
+      <li><a href="http://www.programiz.com/contact">Contact Us</a></li>
+      <li><a href="http://www.programiz.com/advertising">Advertise With Us</a></li>
+    </ul>
+  </div>
+  <div class="copyRight" role="contentinfo">
+    <p>Copyright © by Programiz | All rights reserved | <a href="http://www.programiz.com/privacy-policy">Privacy Policy</a></p>
+  </div>
+</footer>
+  <script type="text/javascript" src="./C Programming Code To Create Pyramid and Pattern - C Example_files/js__sd4vsxffhg0cL1km_YHOlFfpfckWnd6PRAu5v0MAC-U__dusYUiWWOX2tRJblHTKMmN63euNzUSvQObGEdN8cFRw__RIXYFtDBytms-w0gk8NDY3SFSmp_gXRm7WNqSCDhksg.js"></script>
+
+
+
+</body></html>

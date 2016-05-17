@@ -1,0 +1,19 @@
+TOH(n,A,B,C)
+	{
+		if(n==1) 
+		print --> A to C
+		else
+		{
+			TOH(n-1,A,C,B)
+			{
+				print --> A to B
+				{
+					TOH(n-1,B,A,C)
+					{
+						print --> B to C
+
+					}
+				}
+			}
+		}
+	}	

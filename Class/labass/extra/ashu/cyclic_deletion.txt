@@ -1,0 +1,92 @@
+/* Code for cyclic deletion */
+/* You are given as input the length of a list of numbers. For
+instance, given the number 5, you know that there exist a list of 5
+numbers ranging from 1 to 5. You are also given a number k such
+as 7. This number indicates that every 7th number in the list should
+be deleted. The list is considered circular, i.e. the 7th number
+would be the number 2. You have to in each iteration successively
+delete the kth number in each iteration till no numbers remain in
+the list. You have to output the list of numbers in each iteration. */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Node
+{
+	int id;
+	struct Node *next;
+} node;
+
+
+node * insert_node(node *head, int id)
+{
+	node * new = (node*) malloc( sizeof(node) );
+	new->id = id;
+	new->next = head;
+	return new;
+}
+
+void display_list( node *head)
+{
+	while(head !=NULL)
+	{
+		printf("%d ",head->id);
+		head = head->next;
+	}
+	return;
+}
+
+node *delete_node(node *head, node *dnode)
+{
+	node *cur=head;
+	node *prev = NULL;
+	while(cur->id != dnode->id)
+	{
+		prev=cur;
+		cur = cur->next;
+	}
+	if(prev!=NULL)
+		prev->next = cur->next;
+	else
+		head = head->next;
+	printf("deleting node with id %d\n",cur->id);
+	free(cur);
+	return head;
+}
+
+node *get_node(node *head, int id)
+{
+	node *cur = head;
+	int cnt=1;
+	while(cnt < id)
+	{
+		if(cur->next == NULL)
+			cur = head;
+		else
+			cur = cur->next;
+		cnt++;
+	}
+	return cur;
+}
+
+int main()
+{
+	int n, i;
+	int del_id;
+	int id;
+	node *head = NULL;
+	node *del_node;
+	scanf("%d %d", &n, &del_id);
+	i = n;
+	while(i>0)
+		head = insert_node(head, i--);
+	display_list(head);
+	while(head!=NULL)
+	{
+		del_node = get_node(head, del_id);
+		head = delete_node(head, del_node);
+		if(head!=NULL)
+			display_list(head);
+	}
+	return 0;
+}
